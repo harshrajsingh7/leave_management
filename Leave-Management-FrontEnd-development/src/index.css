@@ -1,0 +1,337 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.nav-left {
+  width: 20%;
+}
+
+/* .dashboard-section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+} */
+
+/* .container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+} */
+/* Apple-like Gradient and Styling for Left Nav */
+.left-side {
+  max-width: 300px;
+  background: linear-gradient(135deg, #1e2430 0%, #0d1117 100%);
+  color: white;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px;
+  flex-shrink: 0; 
+  overflow-y: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Improved Logo Styling */
+.left-side .logo-img {
+  width: 75%;
+  height: auto;
+  margin-bottom: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.left-side .logo-img:hover {
+  transform: scale(1.03);
+}
+
+/* Menu Item Styling */
+.left-side .menu-item {
+  margin: 12px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 24px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.left-side .menu-item:after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8), rgba(255,255,255,0));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.left-side .menu-item:hover {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.left-side .menu-item:hover:after {
+  width: 80%;
+}
+
+/* Bottom Menu Group */
+.left-side .menu-item-group {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.left-side .menu-item1 {
+  margin: 10px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  border: none;
+  background: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.left-side .menu-item1:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Button Styling */
+.nav-buttons {
+  background: linear-gradient(135deg, #3a7bd5, #2b5876);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.nav-buttons:hover {
+  background: linear-gradient(135deg, #4a8fe5, #3b6886);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown and Form Control Styling */
+.MuiFormControl-root {
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+/* Customized Select Styling */
+.MuiSelect-select {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+.MuiSelect-select:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Menu Items Styling */
+.MuiMenuItem-root {
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Skeleton Loading Animation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.05), 
+    rgba(255, 255, 255, 0.1), 
+    rgba(255, 255, 255, 0.05)
+  );
+  background-size: 400px 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+  border-radius: 8px;
+}
+
+.skeleton-logo {
+  width: 75%;
+  height: 80px;
+  margin-bottom: 32px;
+}
+
+.skeleton-menu-item {
+  width: 70%;
+  height: 24px;
+  margin: 12px auto;
+}
+
+.skeleton-select {
+  width: 90%;
+  height: 48px;
+  margin: 20px auto;
+}
+
+.skeleton-button {
+  width: 85%;
+  height: 44px;
+  margin: 20px auto;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .left-side {
+    min-width: 250px;
+    padding: 24px 16px;
+  }
+  
+  .left-side .menu-item,
+  .left-side .menu-item1 {
+    font-size: 18px;
+  }
+  
+  button {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Dashboard Section */
+.dashboard-section {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: #f5f5f7;
+}
+
+/* Left Sidebar Fixed */
+.left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e2430 0%, #0d1117 100%);
+  z-index: 100;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* .right-side {
+  flex-grow: 1;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+} */
+
+/* Ensure DataGrid takes full width of right side */
+.right-side .MuiDataGrid-root {
+  width: 100%;
+  background-color: white;
+}
+
+.right-side .greeting {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.right-side .welcome-message {
+  font-size: 50px;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+.hii-png {
+  width: 35px;
+  height: 35px;
+}
+
+/* Add support for smaller screens */
+@media screen and (max-width: 1024px) {
+  .left-side {
+    min-width: 200px;
+  }
+}
+.dashboard-section {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: #101214;
+  z-index: 100;
+}
+
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  padding: 20px;
+  margin-left: 300px; /* Match left-sidebar width */
+  width: calc(100% - 250px); /* Ensure main content takes remaining width */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.welcome-message {
+  font-size: 50px;
+}
+
+

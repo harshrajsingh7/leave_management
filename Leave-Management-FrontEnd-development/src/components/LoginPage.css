@@ -1,0 +1,308 @@
+/* Ultra Professional Mac-Inspired Login Page */
+:root {
+    --primary-color: #0066CC;
+    --primary-hover: #0055b3;
+    --primary-active: #004494;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-tertiary: #8E8E93;
+    --bg-light: #F5F5F7;
+    --bg-dark: #161617;
+    --error-color: #FF3B30;
+    --border-color: #D1D1D6;
+    --input-bg: #FFFFFF;
+    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --transition-fast: 150ms ease;
+    --transition-standard: 300ms ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+  }
+  
+  .login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: var(--bg-light);
+  }
+  
+  .login-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+  }
+  
+  .login-panel {
+    flex: 1;
+    position: relative;
+  }
+  
+  .left-panel {
+    background: linear-gradient(135deg, #1A1A1A 0%, #363636 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .left-panel::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(45deg);
+  }
+  
+  .brand-messaging {
+    position: relative;
+    z-index: 1;
+    padding: 3rem;
+    max-width: 440px;
+  }
+  
+  .brand-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #39f 100%);
+    margin-bottom: 2rem;
+  }
+  
+  .headline {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subheadline {
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.8;
+    line-height: 1.5;
+  }
+  
+  .right-panel {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 360px;
+    padding: 2rem;
+  }
+  
+  .logo-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .company-logo {
+    max-width: 160px;
+    height: auto;
+  }
+  
+  .authentication-container {
+    width: 100%;
+  }
+  
+  .auth-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .input-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .input-wrapper {
+    position: relative;
+  }
+  
+  .input-field {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.15);
+  }
+  
+  .input-field::placeholder {
+    color: var(--text-tertiary);
+  }
+  
+  .input-field.has-error {
+    border-color: var(--error-color);
+  }
+  
+  .password-wrapper .input-field {
+    padding-right: 60px;
+  }
+  
+  .visibility-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+  }
+  
+  .visibility-toggle:hover {
+    color: var(--primary-hover);
+  }
+  
+  .error-message {
+    font-size: 0.75rem;
+    color: var(--error-color);
+    margin-top: 0.25rem;
+    padding-left: 2px;
+  }
+  
+  .submit-button {
+    height: 48px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-top: 0.5rem;
+  }
+  
+  .submit-button:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+  }
+  
+  .submit-button:active:not(:disabled) {
+    background-color: var(--primary-active);
+    transform: scale(0.99);
+  }
+  
+  .submit-button.loading {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+  
+  .submit-button:disabled {
+    background-color: var(--primary-color);
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 992px) {
+    .login-container {
+      flex-direction: column;
+      height: auto;
+      max-width: 600px;
+    }
+    
+    .left-panel, .right-panel {
+      width: 100%;
+    }
+    
+    .left-panel {
+      padding: 3rem 1.5rem;
+    }
+    
+    .headline {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-container {
+      box-shadow: none;
+      background: transparent;
+    }
+    
+    .left-panel {
+      display: none;
+    }
+    
+    .right-panel {
+      background: transparent;
+    }
+    
+    .form-container {
+      padding: 1rem;
+    }
+    
+    .authentication-container {
+      background: white;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+  }
